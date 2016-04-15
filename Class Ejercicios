@@ -1,0 +1,47 @@
+
+package pruebas;
+
+import java.util.Scanner;
+
+
+public class Ejercicios {
+    
+    public void CalcularFibonacci(){
+    
+    int primero=0;
+    int segundo=1;
+    int total=0;
+    int largo=0;
+    int contador=0;
+    
+    try{
+   
+        do{
+           if (contador==0){                    
+            System.out.print("Introduzca el largo de Fibonacci: "); 
+            Scanner sc = new Scanner(System.in);
+            largo = sc.nextInt(); 
+           }else{
+                   
+            System.out.print("Introduzca un largo Mayor a 2 para Fibonacci: ");       
+            Scanner sc = new Scanner(System.in); 
+            largo = sc.nextInt(); 
+           }
+           if(largo>2){
+               System.out.print("La serie es: "+primero+", "+segundo+", ");
+               for(int i=1;i<=largo-2;i++){
+                   total=primero+segundo;
+                   System.out.print(total+", ");
+                   primero=segundo;
+                   segundo=total;                   
+               }
+           }
+         contador=contador+1;
+        } while(largo<=2);
+    
+    }catch(Exception ex){
+      System.out.println(ex);
+    }
+     
+    }
+}
